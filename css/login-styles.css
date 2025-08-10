@@ -28,6 +28,13 @@ body{
   max-width: 100%;
   min-height: 500px;
 }
+.forgot-container{
+  width: 450px !important;
+  min-height: 400px !important;
+}
+.container .align-fp{
+  position: relative !important;
+}
 /* block text styling */
 .container p{
   font-size: 14px;

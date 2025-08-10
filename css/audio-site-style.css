@@ -15,6 +15,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+.body-content{
+  height: 150dvh;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 100px 75px;
+  background-color: rgba(255, 255,255, 0.15);
+  backdrop-filter: blur(10px);
+  border: none;
+}
 
 /* head panel*/
 .header-section{
@@ -235,6 +244,69 @@
 }
 .biblo-container p{
   font-size: x-large;
+}
+/* gallery styling */
+/* creates the container where the galllery images will be displayed */
+.gallery-container{
+  border: 1px solid rgba(3, 0, 14, 0.9);
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(3, 0, 14, 0.9);
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+}
+.gallery-container::-webkit-scrollbar{
+  display: none;
+}
+.column{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.post{
+  position: relative;
+  overflow: hidden;
+  /* width: 10%;
+  height: 300px;
+  background: red; */
+  /* transition: 0.6s ease-in-out; */
+  opacity: 0;
+  transition: opacity 0.5s ease-out,
+              transform 0.7s ease-out;
+}
+.post-entering{
+  opacity: 0;
+  transform: translateY(100px);
+}
+.gallery-loaded .post, .post-resizing{
+  opacity: 1;
+  transform: translateY(0);
+}
+.post-resizing{
+  transition: opacity 0.5s ease-out,
+                transform 0.5s ease-out;
+}
+
+img{
+  width: 100%;
+  filter: grayscale(100%);
+  transition: 0.6s ease-in-out;
+}
+.post:hover{
+  /* transform: scale(.95, .95); */
+  cursor: pointer;
+  filter: grayscale(0%);
+  transform: scale(0.98);
+  transition: transform 0.2s ease-in;
+}
+img:hover{
+  filter: grayscale(0);
 }
 
 
