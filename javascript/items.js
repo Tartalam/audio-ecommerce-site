@@ -13,18 +13,13 @@ const images = ['../image/pexels-eric-esma-302047-894156.jpg',
 
 ];
 
-let imageIndex = 0;
+// let imageIndex = 0;
 
 for(let i = 0; i < images.length; i++){
-  let item = {
-    id: i,
-    image: images[imageIndex]
-  }
-  posts.push(item);
-  imageIndex++;
-
-  if(imageIndex >= images.length - 1)
-    imageIndex = 0;
+posts.push({
+  id: i,
+  image: images[i % images.length]
+});
 }
 
 // console.log(posts);
