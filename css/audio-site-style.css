@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 /*body styling*/
 .font-style{
   font-family:'Times New Roman', Times, serif;
@@ -59,47 +62,18 @@
   font-weight: bold;
   font-style:oblique;
 }
-
-/*nav bar styling*/
-.navbar{
-  display: flex;
-  justify-content: center; 
-  background-color: grey;
-  padding:  0 1rem;
-
-}
-
-.nav-link{
-  display: flex;
-  color:white;
-  padding: 1.5em 1.5em;
-  text-decoration: none;
-  text-align: center;
-  font-size:large;
-}
-
-.navbar .right{
-  position:absolute;
-  right: 10px;
-  text-align: center;
-}
-.nav-link:hover{
-  background-color: wheat;
-}
-.nav-link:active{
-  background-color: blue;
-}
 /* body section*/
+
 .music-player-container{
   width: 100%;
   height: 40em;
-  background-color: whitesmoke;
   box-sizing: border-box;
-  padding: 5em 8em;
+  padding: 3rem 6rem;
 }
 .music-player-box{
   width: 100%;
   height: 100%;
+  border: 1px solid black;
   background-color:aqua;
 }
 .lyrics-container{
@@ -107,8 +81,7 @@
   height: 40em;
   box-sizing: border-box;
   margin: 0;
-  padding: 5em 8em;
-  background-color: whitesmoke;
+  padding: 3rem 6rem;
 }
 /*Lyrics section stying*/
 .lyrics-box{
@@ -136,8 +109,7 @@
   height: 40em;
   box-sizing: border-box;
   margin: 0;
-  padding: 5em 8em;
-  background-color: whitesmoke;
+  padding: 3rem 6rem;
 }
 .sample-bio-box{
   display: flex;
@@ -158,13 +130,8 @@
   height:100%;
   background-color: red;
 }
-/* footer */
-.footer{
-  width: 100%;
-  height: 20em;
-  margin: 0;
-  background-color: grey;  
-}
+
+
 /* media player */
 .media-player-container{
   width: 100%;
