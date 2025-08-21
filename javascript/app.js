@@ -1,5 +1,6 @@
+import {posts} from './items.js';
 
-  const container = document.querySelector('.gallery-container');
+const container = document.querySelector('.gallery-container');
 let previousScreenSize = window.innerWidth;
 
 //create modal elements
@@ -148,7 +149,7 @@ function generateMasonryGrid(columns, posts) {
 //close modal handlers
 modalClose.addEventListener('click', function(e){
 e.stopPropagation();
-modalContainer.classList.remove('actove');
+modalContainer.classList.remove('active');
 
 setTimeout(() => {
   modalContainer.style.display = 'none';

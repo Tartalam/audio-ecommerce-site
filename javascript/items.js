@@ -1,7 +1,7 @@
-const posts = [];
+export const posts = [];
 
 const images = ['../image/pexels-eric-esma-302047-894156.jpg',
-              '../image/pexels-padrinan-167092.jpg',
+              '../ipmage/pexels-padrinan-167092.jpg',
               '../image/pexels-pixabay-207353.jpg',
               '../image/pexels-pixabay-257904.jpg',
               '../image/pexels-pixabay-276092.jpg',
@@ -22,5 +22,5 @@ posts.push({
 });
 }
 
-// console.log(posts);
+
 

@@ -12,6 +12,7 @@
 
 </head>
 <body class="background-image font-style">
+  <!-- nav bar -->
   <nav class="navbar navbar-expand navbar-light bg-light">
     <a class="nav-link " href="#">Home</a>
     <a class="nav-link" href="#">Music</a>
@@ -19,24 +20,63 @@
     <a class="nav-link" href="#">About</a>
     <a class="nav-link right" href="#"><span>Login/Register</span></a>
   </nav>
+  <!-- header Titles -->
   <header class="header-section header-title">
     <div class="title">
       <p>HASIE HARRISON</p>
       <P>SLOGAN</P>
     </div>
   </header>
-  
+  <!-- music player -->
   <div class="music-player-container">  
+    <!-- music player contianer -->
     <div class="music-player-box ">
-
+      <!-- music player -->
+        <div class="music-player">
+          <!-- music details -->
+          <div class="music-detail">
+            
+            <div class="music-heading">
+              <p id="songTitle"></p>
+              <p id="singerName"></p>
+            </div>
+            <div class="track-image">
+              <img src="" 
+              alt="music image" class="song-image" >
+              <button class="play-icon">
+                <i class="fa-solid fa-play play-button-icon"></i>
+              </button>
+            </div>
+            
+          </div>
+          <!-- music player control -->
+           <div class="controls">
+            <!-- bittons and volume slider -->
+             <div class="buttons">
+                <button class= "play">
+                </button>
+              <!-- volume -->
+               <div class="volume">
+                  <i class="fa fa-volume-up vol-icon" aria-hidden="true"
+                  id="volume-icon"></i>
+                  <input type="range" name="volume slider"
+                  class="volume-slider" min="0" max="100"
+                  value="100">
+               </div>
+             </div>
+           </div>
+        </div>
     </div>
   </div>
+  <!-- lyrics -->
   <div class="lyrics-container">
     <div class="lyrics-box" >
-      <div class="track">track</div>
-      <div class="track-lyrics">words</div>
+      <div class="track"><span></span></div>
+     
+      <div class="track-lyrics"><p></p></div>
     </div>
   </div>
+  <!-- sample bio -->
   <div class="bio-container">
     <div class="sample-bio-box">
       <div class="sample-bio"> sample</div>
@@ -45,7 +85,7 @@
   </div>
   
   
-
+<!-- footer -->
 <footer class = "footer icon-containers" >
     <div class="top-footer">
       <div class="profile">
@@ -66,6 +106,7 @@
           </p>
         </div>
       </div>
+      <!-- browse section -->
       <div class="footer-container browse">
          <div class="footer-title"><h3>browse</h3></div>
           <div class="links">
@@ -74,6 +115,7 @@
             <a href="#">lyrics</a>
           </div>
       </div>
+      <!-- about section -->
       <div class="footer-container about">
          <div class="footer-title"><h3>about</h3></div>
         <div class="links">
@@ -81,6 +123,7 @@
           <a href="#">gallery</a>
         </div>
       </div>
+      <!-- contact section -->
       <div class="footer-container contact-us">
         <div class="footer-title"><h3>contact</h3></div>
         <div class="links">
@@ -90,6 +133,7 @@
           <a href="#"> Contact US</a>
         </div>
       </div>
+      <!-- social section -->
       <div class="footer-container social">
         <div class="footer-title"><h3>social</h3></div>
         <div class="links">
@@ -107,8 +151,6 @@
     <div class="bottom-footer"></div>
 
    </footer>
-
-   <script src="../javascript/items.js"></script>
-   <script src="../javascript/app.js"></script>
+   <script type="module" src="/javascript/music-script.js"></script>
 </body>
 </html>

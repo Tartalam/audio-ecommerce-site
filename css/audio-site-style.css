@@ -64,18 +64,155 @@
 }
 /* body section*/
 
+/* music player styling */
 .music-player-container{
   width: 100%;
-  height: 40em;
+  height: 50rem;
   box-sizing: border-box;
-  padding: 3rem 6rem;
+  padding: 3rem 10rem;
+  margin: 0;
 }
+
 .music-player-box{
   width: 100%;
   height: 100%;
-  border: 1px solid black;
+  border: none;
   background-color:aqua;
+  box-sizing: border-box;
+  padding: 10px;
 }
+.music-player{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #bbb;
+}
+.music-detail{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 90%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: beige;
+}
+.music-heading{
+  height: 10%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+
+}
+.music-heading p{
+  margin: 0;
+  padding: 0;
+}
+
+.track-image{
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.play-icon{
+  position: absolute;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  border: none;
+  outline: none;
+  background-color: rgba(0,0,0,1);
+  animation: buttonAnimate 1s ease-out forwards;
+}
+@keyframes buttonAnimate{
+  form{
+    transform: scale(0.3);
+    background-color: rgba(0,0,0,1);
+  }
+  to{
+    transform: scale(1.5);
+    background-color: rgba(0,0,0,0);
+  }
+}
+.play-button-icon{
+  font-size: 50px;
+  color: rgba(255, 255, 255, 1);
+  animation: iconAnimation 0.7s ease-out forwards ;
+}
+@keyframes iconAnimation{
+  from{
+    transform: scale(0.3);
+    color: rgba(255, 255, 255, 1);
+  }
+  to
+  {
+    transform: scale(1.1);
+    color: rgba(255, 255, 255, 0);
+  }
+}
+
+.song-image{
+  height: 100%;
+  width: 60%;
+  filter: grayscale(0%) !important;
+  object-fit: fill;
+
+}
+.controls{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 10%;
+  background-color: red;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+/* container for the buttom play icon */
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+/* button styling */
+.play{
+  font-size: x-large;
+  width: 60px;
+  height: 60px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+/* bottom buttom styling */
+.buttom-play-icon{
+  font-size: 40px;
+}
+/* volume container */
+.volume{
+position: absolute;
+right: 5%;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+.volume-slider{
+  width: 150px;
+  accent-color: blue;
+}
+.vol-icon{
+  font-size: 20px;
+}
+
+/* Lyrics container styling */
 .lyrics-container{
   width: 100%;
   height: 40em;
@@ -83,6 +220,7 @@
   margin: 0;
   padding: 3rem 6rem;
 }
+
 /*Lyrics section stying*/
 .lyrics-box{
   display: flex;
@@ -93,15 +231,49 @@
   padding: 0;
   background-color: blueviolet;
 }
+/* container that holds track title */
 .track{
+  display: flex;
   flex-basis: 30%;
   height: 100%;
   background-color: red;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 50px 20px 0 20px;
+
 }
+.track span{
+  font-weight: 700;
+  font-display:block;
+  font-style: oblique;
+  font-size: 40px;
+  
+}
+
 .track-lyrics{
   flex-basis: 70%;
   height: 100%;
   background-color: aqua;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: hidden;
+}
+.track-lyrics p{
+  font-weight: 500;
+  font-size: 23px;
+  line-height: 25px;
+  word-spacing: normal;
+}
+
+.view-full-lyrics{
+  color: rgb(102, 102, 102);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .8rem;
+}
+.view-full-lyrics:hover{
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
 }
 /* sample biography styling */
 .bio-container{
@@ -131,22 +303,6 @@
   background-color: red;
 }
 
-
-/* media player */
-.media-player-container{
-  width: 100%;
-  height: 50em;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 3em 8em;
-  background-color: whitesmoke;
-}
-.media-player{
-  width: 100%;
-  height: 100%;
-  background-color: aquamarine;
-}
-/* lyrics page setup */
 .ld-container{
   padding: 0.9em 1.25em;
   width: calc(100% -20%);
@@ -212,130 +368,7 @@
 .biblo-container p{
   font-size: x-large;
 }
-/* gallery styling */
-/* creates the container where the galllery images will be displayed */
-.gallery-container{
-  border: 1px solid rgba(3, 0, 14, 0.9);
-  border-radius: 30px;
-  width: 100%;
-  height: 100%;
-  min-height: 100vh;
-  background-color: rgba(3, 0, 14, 0.9);
-  overflow: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  display: flex;
-  gap: 10px;
-  padding: 20px;
-}
-.gallery-container::-webkit-scrollbar{
-  display: none;
-}
-.column{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.post{
-  position: relative;
-  overflow: hidden;
-  /* width: 10%;
-  height: 300px;
-  background: red; */
-  /* transition: 0.6s ease-in-out; */
-  opacity: 0;
-  transform:  translateY(20px);
-  transition: opacity 0.5s ease-in-out,
-              transform 0.7s ease-in-out;
-}
-.post-entering{
-  opacity: 0;
-  transform: translateY(100px);
-}
-.gallery-loaded .post, .post-resizing{
-  opacity: 1;
-  transform: translateY(0);
-}
-.post-resizing{
-  transition: opacity 0.5s ease-out,
-                transform 0.5s ease-out;
-}
 
-img{
-  width: 100%;
-  filter: grayscale(100%);
-  transition: 0.6s ease-in-out;
-}
-.post:hover{
-  /* transform: scale(.95, .95); */
-  cursor: pointer;
-  filter: grayscale(0%);
-  transform: scale(0.98);
-  transition: transform 0.5s ease-in;
-}
-img:hover{
-  filter: grayscale(0);
-}
-.modal{
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0);
-  transition: background-color 0.3s ease;
-}
-.modal.active{
-  background-color: rgba(0,0,0,0.9);
-}
-.modal-content{
-  display: block;
-  max-width: 90%;
-  max-height: 90%;
-  margin: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation: modalScaleIn 0.4s ease-out forwards; /* Add this line */
-  transform-origin: center center; /* Ensures it scales from the center */
-}
-
-@keyframes modalScaleIn {
-  from {
-    transform: translate(-50%, -50%) scale(0.1);
-    opacity: 0;
-  }
-  to {
-    transform: translate(-50%, -50%) scale(0.9);
-    opacity: 1;
-  }
-}
-
-.close{
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.close:hover{
-  color: #bbb;
-}
-
-/* 100% image width on smaller screens */
-@media only screen and (max-width: 700px){
-  .modal-content{
-    width: 100%;
-  }
-}
-
-/* gallery styling end */
 
 
 

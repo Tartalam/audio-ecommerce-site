@@ -44,7 +44,6 @@
 .profile-pic{
   display: flex;
   width: 175px;
-  min-width: 175px;
   height: 175px;
   border: 2px solid black;
   border-radius: 50%;
@@ -54,7 +53,8 @@
 }
 /* styling for the website owners image */
 .footer-pic{
-  position: relative;
+  width: 175px;
+  height: 175px;
   object-fit: cover;
   border-radius: 50%;
 
