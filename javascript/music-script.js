@@ -1,4 +1,5 @@
 import { music_post } from "./music-items.js";
+import {biography} from "./music-items.js";
 
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
@@ -6,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const artistName = document.querySelector('#singerName');
     const audioImage = document.querySelector('.song-image'); // Changed to correct class
     const lyrics = document.querySelector('.track-lyrics p');
+    const sampleBio = document.querySelector('.sample-bio p');
     
 
     
@@ -35,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function() {
         title.innerHTML = music_post[index].title;
         artistName.innerHTML = music_post[index].artist;
         audioImage.src = music_post[index].image;
+
+        // load up to 16 lines of text into the container
         const fullLyrics = music_post[index].lyric;
         const lyricsArray = fullLyrics.split('\n');
         const maxLines = 16;
@@ -51,6 +55,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         trackName.innerHTML = music_post[index].title;
+
+        // loads up to 16 line of the bio in the container
+        const fullBio = biography;
+        const bioArray = fullBio.split('\n');
+        const maxLines2 = 7;
+        
+        if(bioArray.length > maxLines){
+            const visibleBio = bioArray.slice(0, maxLines2).join('<br>');
+            sampleBio.innerHTML = `
+            ${visibleBio}<br>
+            <a href = "../html/biblography-page.html" class = "view-full-bio">
+            View full biography →</a>
+            `;
+        }else{
+            sampleBio.innerHTML = fullBio.replace(/\n/g, '<br>');
+        }
         
         // Load the audio (but don't play yet)
         track.load();

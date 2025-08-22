@@ -3,40 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="author" content="jahmari harrison">
-  <meta name="description" content=" a place to promote and showcase my music and talent">
+  <meta name="description" content="a place to promote and showcase my music and talent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="../css/audio-site-style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-  <title>Bibliography</title>
+  <link rel="stylesheet" href="../css/footer-styling.css">
+  <link rel="stylesheet" href="../css/navbar-styling.css">
+  <title>Biography - Hasie Harrison</title>
 </head>
 <body class="background-image font-style">
-   <nav class="navbar navbar-expand navbar-light bg-light">
-    <a class="nav-link " href="#">Home</a>
+  <!-- nav bar -->
+  <nav class="navbar navbar-expand navbar-light bg-light">
+    <a class="nav-link" href="../index.html">Home</a>
     <a class="nav-link" href="#">Music</a>
-    <a class="nav-link" href="#">Lyrics</a>
-    <a class="nav-link" href="#">About</a>
-    <a class="nav-link right" href="#">Login/Register</a>
+    <a class="nav-link" href="lyrics-page.html">Lyrics</a>
+    <a class="nav-link" href="biblography-page.html">About</a>
+    <a class="nav-link right" href="#"><span>Login/Register</span></a>
   </nav>
-  <div class="biblo-container">
-    <div class="biblo-title">BIBLIOGRAPHY</div>
-   <img src="/image/pexels-pixabay-207353.jpg" alt="an image" class="top-right-image">
-    <p> 
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras quis ipsum turpis. Nullam in purus ut ante imperdiet bibendum. Aenean purus mi, fermentum vel augue nec, varius sollicitudin enim. Morbi eleifend, est sed venenatis feugiat, enim diam fringilla purus, eu pulvinar dolor erat fringilla diam. Sed a magna aliquam odio accumsan sollicitudin molestie vel ex. Maecenas lacinia, nisi et lacinia mattis, odio lacus mattis ipsum, imperdiet suscipit quam tortor a nisl. Donec ut massa diam. Duis a massa nec ex dignissim dictum. Donec ultrices sodales consectetur. Aliquam ullamcorper, sem id tincidunt auctor, lorem magna varius quam, eu facilisis velit lacus quis metus. In mollis eros non ligula dignissim pharetra.
-
-Maecenas quis gravida ex. Pellentesque egestas, nulla in bibendum malesuada, odio ipsum tempus nulla, quis porttitor nibh est vel augue. Etiam eu efficitur risus. Aliquam vitae congue libero, at lobortis tellus. Integer vel arcu quam. Praesent orci libero, bibendum ac nulla semper, finibus posuere mi. Nam tempus ac metus id elementum.
-
-Nullam malesuada odio mi, sed sollicitudin felis efficitur non. Ut ornare pretium tellus, auctor posuere augue. Cras porta tristique dui, in aliquet dolor pretium quis. Pellentesque aliquet turpis placerat erat porta, sed tempor lectus porta. Vivamus mattis tempus malesuada. Maecenas ultricies lacus a lacus congue, tincidunt posuere nisi dapibus. Integer hendrerit consectetur risus, non fermentum erat gravida placerat. Proin rhoncus volutpat odio, vel pretium arcu. Aenean auctor tincidunt eros at ultricies.
-
-Duis enim lacus, hendrerit ac enim a, vulputate imperdiet ante. Nunc vel feugiat quam. Ut convallis ligula in augue tincidunt, eu congue metus tempor. Integer ultricies eu augue at placerat. Nunc quis dictum urna. Fusce consequat ut neque ut sagittis. In sagittis, est sit amet rutrum ultricies, nisl massa posuere dui, eu rhoncus nunc orci at risus. Cras non purus ut erat porttitor molestie eget quis mi. Praesent ut magna non nunc sagittis viverra id ultricies lectus. Nulla nulla lectus, viverra at sollicitudin scelerisque, consectetur ut quam. Duis semper ut metus nec semper. Vivamus eget justo at lectus rutrum venenatis. Proin ornare nulla ac erat semper viverra nec in lacus. Duis posuere malesuada risus, sed sagittis urna blandit at. Proin eu sollicitudin nibh.
-
-Nam tellus arcu, convallis a felis ut, pretium suscipit lorem. Vivamus vel eleifend nibh. Vivamus ac ex ex. Proin quis massa felis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Morbi euismod auctor blandit. Duis diam massa, porttitor in egestas non, posuere sed quam. Mauris scelerisque luctus nunc, non rhoncus quam dapibus vitae. Suspendisse orci nisl, pulvinar sit amet libero semper, bibendum semper enim.</p>
-
+  
+  <!-- Biography Header -->
+  <div class="bio-hero">
+    <h1>Artist Biography</h1>
+    <p>The Story Behind the Music</p>
+  </div>
+  
+  <!-- Biography Content -->
+  <div class="biography-container">
+    <div class="bio-content">
+      <div class="bio-image-container">
+        <img src="../image/pexels-pixabay-257904.jpg" alt="Hasie Harrison" class="bio-image">
+      </div>
+      
+      <div class="bio-text" id="bioContent">
+        <!-- Biography content will be inserted here by JavaScript -->
+      </div>
+    </div>
+    
+    <div class="bio-signature">
+      - Hasie Harrison
+    </div>
   </div>
 
-  <footer class = "footer icon-containers icons" >
+  <script type="module">
+    import { biography } from "../javascript/music-items.js";
     
-  </footer>
+    document.addEventListener('DOMContentLoaded', function() {
+      const bioContent = document.getElementById('bioContent');
+      
+      // Format the biography text with paragraphs
+      const formattedBio = biography
+        .split('\n\n') // Split by double newlines for paragraphs
+        .map(paragraph => {
+          if (paragraph.trim()) {
+            return `<p>${paragraph.trim()}</p>`;
+          }
+          return '';
+        })
+        .join('');
+      
+      bioContent.innerHTML = formattedBio;
+    });
+  </script>
+
+<!-- footer -->
+<footer class="footer icon-containers">
+    <div class="top-footer">
+      <div class="profile">
+        <div class="profile-pic">
+          <img src="../image/pexels-pixabay-257904.jpg" alt="" class="footer-pic">
+        </div>
+        <div class="profile-exert">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+            sed do eiusmod tempor incididunt ut labore et dolore magna 
+            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+            aute irure dolor in reprehenderit in 
+            voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+            qui officia deserunt mollit anim id est laborum.
+            <a href="#">show more...</a>
+          </p>
+        </div>
+      </div>
+      <!-- browse section -->
+      <div class="footer-container browse">
+         <div class="footer-title"><h3>browse</h3></div>
+          <div class="links">
+            <a href="../index.html">home</a>
+            <a href="#">music</a>
+            <a href="lyrics-page.html">lyrics</a>
+          </div>
+      </div>
+      <!-- about section -->
+      <div class="footer-container about">
+         <div class="footer-title"><h3>about</h3></div>
+        <div class="links">
+          <a href="biblography-page.html">bio</a>
+          <a href="#">gallery</a>
+        </div>
+      </div>
+      <!-- contact section -->
+      <div class="footer-container contact-us">
+        <div class="footer-title"><h3>contact</h3></div>
+        <div class="links">
+          <i class="fa-solid fa-envelope contact-icons">: <span>hasieh376@gmail.com</span></i>
+          <i class="fa-solid fa-phone contact-icons">: <span>1(888) 888 8888</span></i>
+          <i class="fa-brands fa-whatsapp contact-icons">: <span>1(888) 888 8888</span></i>
+          <a href="#"> Contact US</a>
+        </div>
+      </div>
+      <!-- social section -->
+      <div class="footer-container social">
+        <div class="footer-title"><h3>social</h3></div>
+        <div class="links">
+          <div class="social-container">
+            <i class="fa-brands fa-youtube"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-square-instagram"></i>
+            <i class="fa-brands fa-square-x-twitter"></i>
+            <i class="fa-brands fa-tiktok"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-footer"></div>
+   </footer>
 </body>
 </html>
