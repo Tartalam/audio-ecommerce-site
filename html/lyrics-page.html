@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <meta name="author" content="jahmari harrison">
   <meta name="description" content="a place to promote and showcase my music and talent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,103 +11,112 @@
   <link rel="stylesheet" href="../css/navbar-styling.css">
   <title>Lyrics page</title>
 </head>
-<body class="background-image font-style">
-<nav class="navbar navbar-expand navbar-light bg-light">
-    <a class="nav-link" href="../index.html">Home</a>
-    <a class="nav-link" href="#">Music</a>
-    <a class="nav-link" href="lyrics-page.html">Lyrics</a>
-    <a class="nav-link" href="#">About</a>
-    <a class="nav-link right" href="#">Login/Register</a>
-  </nav>
-  
-  <div class="ld-container">
-    <div class="lyrics-header">
-      <h1>Song Lyrics</h1>
-      <p>Select a song to view its complete lyrics</p>
-    </div>
+  <body class="background-image font-style lyrics-page-body">
+    <div class="body-content">
+      <nav class="navbar navbar-expand navbar-light bg-light">
+          <a class="nav-link" href="../index.html">Home</a>
+          <a class="nav-link" href="#">Music</a>
+          <a class="nav-link" href="lyrics-page.html">Lyrics</a>
+          <a class="nav-link" href="#">About</a>
+          <a class="nav-link right" href="#">Login/Register</a>
+        </nav>
+        
+        <div class="ld-container">
+          <div class="lyrics-header">
+            <h1>Song Lyrics</h1>
+            <p>Select a song to view its complete lyrics</p>
+          </div>
 
-    <div class="ld-box">
-      <div class="ld-left">
-        <div class="lyrics-selection">
-          <h3>Song Selection</h3>
-          <div id="songList"></div>
-        </div>
-      </div>
-      
-      <div class="ld-right">
-        <div class="ld-notes">
-          <div class="lyrics-title" id="currentSongTitle">Select a song to view lyrics</div>
-          <div id="lyricsContent"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <!-- footer -->
-<footer class="footer icon-containers">
-    <div class="top-footer">
-      <div class="profile">
-        <div class="profile-pic">
-          <img src="../image/pexels-pixabay-257904.jpg" alt="" class="footer-pic">
-        </div>
-        <div class="profile-exert">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-            sed do eiusmod tempor incididunt ut labore et dolore magna 
-            aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
-            ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
-            aute irure dolor in reprehenderit in 
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-            qui officia deserunt mollit anim id est laborum.
-            <a href="#">show more...</a>
-          </p>
-        </div>
-      </div>
-      <!-- browse section -->
-      <div class="footer-container browse">
-         <div class="footer-title"><h3>browse</h3></div>
-          <div class="links">
-            <a href="../index.html">home</a>
-            <a href="#">music</a>
-            <a href="lyrics-page.html">lyrics</a>
-          </div>
-      </div>
-      <!-- about section -->
-      <div class="footer-container about">
-         <div class="footer-title"><h3>about</h3></div>
-        <div class="links">
-          <a href="#">bio</a>
-          <a href="#">gallery</a>
-        </div>
-      </div>
-      <!-- contact section -->
-      <div class="footer-container contact-us">
-        <div class="footer-title"><h3>contact</h3></div>
-        <div class="links">
-          <i class="fa-solid fa-envelope contact-icons">: <span>hasieh376@gmail.com</span></i>
-          <i class="fa-solid fa-phone contact-icons">: <span>1(888) 888 8888</span></i>
-          <i class="fa-brands fa-whatsapp contact-icons">: <span>1(888) 888 8888</span></i>
-          <a href="#"> Contact US</a>
-        </div>
-      </div>
-      <!-- social section -->
-      <div class="footer-container social">
-        <div class="footer-title"><h3>social</h3></div>
-        <div class="links">
-          <div class="social-container">
-            <i class="fa-brands fa-youtube"></i>
-            <i class="fa-brands fa-square-facebook"></i>
-            <i class="fa-brands fa-square-instagram"></i>
-            <i class="fa-brands fa-square-x-twitter"></i>
-            <i class="fa-brands fa-tiktok"></i>
+          <div class="ld-box">
+            <div class="ld-left">
+              <div class="lyrics-selection">
+                <h3>Song Selection</h3>
+                <div id="songList"></div>
+              </div>
+            </div>
+            
+            <div class="ld-right">
+                 <div class="zoom-container">
+                  <button id="zoom-in">
+                    <i class="fa-solid fa-plus"></i>
+                  </button>
+                  <button id="zoom-out">
+                    <i class="fa-solid fa-minus"></i>
+                  </button> 
+                </div>
+              <div class="ld-notes" data-zoom ="1">
+                <div class="lyrics-title" id="currentSongTitle">Select a song to view lyrics</div>
+                <div id="lyricsContent"></div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+        
+        <!-- footer -->
+      <footer class="footer icon-containers">
+          <div class="top-footer">
+            <div class="profile">
+              <div class="profile-pic">
+                <img src="../image/pexels-pixabay-257904.jpg" alt="" class="footer-pic">
+              </div>
+              <div class="profile-exert">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                  sed do eiusmod tempor incididunt ut labore et dolore magna 
+                  aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                  ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis 
+                  aute irure dolor in reprehenderit in 
+                  voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                  Excepteur sint occaecat cupidatat non proident, sunt in culpa 
+                  qui officia deserunt mollit anim id est laborum.
+                  <a href="#">show more...</a>
+                </p>
+              </div>
+            </div>
+            <!-- browse section -->
+            <div class="footer-container browse">
+              <div class="footer-title"><h3>browse</h3></div>
+                <div class="links">
+                  <a href="../index.html">home</a>
+                  <a href="#">music</a>
+                  <a href="lyrics-page.html">lyrics</a>
+                </div>
+            </div>
+            <!-- about section -->
+            <div class="footer-container about">
+              <div class="footer-title"><h3>about</h3></div>
+              <div class="links">
+                <a href="#">bio</a>
+                <a href="#">gallery</a>
+              </div>
+            </div>
+            <!-- contact section -->
+            <div class="footer-container contact-us">
+              <div class="footer-title"><h3>contact</h3></div>
+              <div class="links">
+                <i class="fa-solid fa-envelope contact-icons">: <span>hasieh376@gmail.com</span></i>
+                <i class="fa-solid fa-phone contact-icons">: <span>1(888) 888 8888</span></i>
+                <i class="fa-brands fa-whatsapp contact-icons">: <span>1(888) 888 8888</span></i>
+                <a href="#"> Contact US</a>
+              </div>
+            </div>
+            <!-- social section -->
+            <div class="footer-container social">
+              <div class="footer-title"><h3>social</h3></div>
+              <div class="links">
+                <div class="social-container">
+                  <i class="fa-brands fa-youtube"></i>
+                  <i class="fa-brands fa-square-facebook"></i>
+                  <i class="fa-brands fa-square-instagram"></i>
+                  <i class="fa-brands fa-square-x-twitter"></i>
+                  <i class="fa-brands fa-tiktok"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="bottom-footer"></div>
+      </footer>
     </div>
-    <div class="bottom-footer"></div>
-   </footer>
-   
-   <script type="module" src="../javascript/lyricsScript.js"></script>
-</body>
+    <script type="module" src="../javascript/lyricsScript.js"></script>
+  </body>
 </html>

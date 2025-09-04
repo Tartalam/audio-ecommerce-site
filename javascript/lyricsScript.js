@@ -4,6 +4,9 @@ document.addEventListener('DOMContentLoaded', function(){  // Fixed typo
   const songList = document.getElementById('songList');
   const lyricsContent = document.getElementById('lyricsContent');
   const currentSongTitle = document.getElementById('currentSongTitle');
+  const zoomIn = document.getElementById('zoom-in');
+  const zoomOut = document.getElementById('zoom-out');
+
       
   // Populate song list
   music_post.forEach((song, index) => {
@@ -51,4 +54,29 @@ document.addEventListener('DOMContentLoaded', function(){  // Fixed typo
     currentSongTitle.textContent = song.title;
     lyricsContent.innerHTML = song.lyric.replace(/\n/g, '<br>');
   }
+
+  zoomIn.addEventListener('click', function(e){
+
+    const target = document.querySelector('.ld-notes');
+
+    let currentZoom = parseFloat(target.getAttribute('data-zoom')) || 1;
+    let newZoom = currentZoom + 0.1;
+    newZoom = Math.min(2, Math.max(0.1, newZoom));
+
+    target.style.transform = `scale(${newZoom})`;
+    target.setAttribute('data-zoom', newZoom);
+  });
+
+  zoomOut.addEventListener('click', function(e){
+
+    const target = document.querySelector('.ld-notes');
+
+    let currentZoom = parseFloat(target.getAttribute('data-zoom')) || 1;
+    let newZoom = currentZoom - 0.1;
+    newZoom = Math.max(1, newZoom);
+
+    target.style.transform = `scale(${newZoom})`;
+    target.setAttribute('data-zoom', newZoom);
+
+  });
 });

@@ -1,26 +1,28 @@
 /* footer */
-
 .footer{
   width: 100%;
   min-height: 20rem; 
   height: auto;
   margin: 0;
-  background-color: grey;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
   flex-wrap: wrap;
   position: relative;
+  border-top: 3px solid rgba(75, 76, 78, 0.3);
 }
+
 .top-footer{
   min-height: 16rem;
   height: auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /* background-color: beige; */
   position: relative;
+  padding: 2rem;
 }
+
 .top-footer::before{
   content: '';
   position: absolute;
@@ -28,37 +30,38 @@
   left: 10%;
   right: 10%;
   width: 80%;
-  height: 3px;
-  background-color: rgba(150, 148, 148, 0.2);
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #4b4c4e, transparent);
 }
-/* the container for the aritist image and bio */
+
+/* the container for the artist image and bio */
 .profile{
   display: flex;
   flex-direction: row;
   position: relative;
   flex: 2;
-  /* flex-wrap: wrap; */
-
 }
+
 /* flex container for user image */
 .profile-pic{
   display: flex;
   width: 175px;
   height: 175px;
-  border: 2px solid black;
+  border: 3px solid rgba(102, 126, 234, 0.5);
   border-radius: 50%;
-  margin: 10px 0 0 0;
-  
-  
+  margin: 10px 20px 0 0;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
+
 /* styling for the website owners image */
 .footer-pic{
-  width: 175px;
-  height: 175px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   border-radius: 50%;
-
 }
+
 /* profile text */
 .profile-exert {
   display: block;
@@ -66,9 +69,22 @@
   max-width: 460px;
   min-width: 200px;
   padding: 20px 30px;
+  color: #e0e0e0;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
 }
+
 .profile-exert a{
-  font-size: 1.1rem;
+  font-size: 1rem;
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.profile-exert a:hover{
+  color: #764ba2;
+  text-decoration: underline;
 }
 
 .footer-container{
@@ -76,31 +92,42 @@
   flex-direction: column;
   flex: 1; 
   font-family: 'Inter', sans-serif;
-  font-optical-sizing: auto;
   font-weight: 600;
-  font-style: normal;
   position: relative;
   box-sizing: border-box;
-  border-left: 3px inset rgba(185, 184, 184, 0.1);
-  box-shadow: -4px 0 5px -9px rgba(0, 0, 0, 0.2); 
-  /* box-shadow: inset 5px 0 10px -5px rgba(0, 0, 0, 0.5); */
-  margin: 3px 0 3px 0;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 0;
+  padding-left: 20px;
 }
 
 .footer-title{
   display: flex;
   justify-content:center;
   align-items:center;
-  text-decoration: underline;
   margin:0;
   padding: 10px;
   overflow: hidden;
-  /* background-color: black; */
+}
 
+.footer-title h3{
+  color: #ffffff;
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  margin: 0;
+  position: relative;
 }
-.footer-title h3::first-letter{
-  text-transform:uppercase ;
+
+.footer-title h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 25%;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #56575a, transparent);
 }
+
 .links{
   display: flex;
   flex-direction: column;
@@ -109,34 +136,62 @@
   text-transform: capitalize;
   align-items: flex-start;
 }
+
 .links a{
   margin-top: 12px;
   text-decoration: none;
-  color: rgb(22, 22, 22);
+  color: #b3b3b3;
+  font-weight: 400;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
 }
+
 .links a:hover{
-  color: white;
+  color: #667eea;
+  transform: translateX(5px);
 }
+
 .links a:active{
-  color: rgb(105, 104, 104);
+  color: #764ba2;
 }
+
 .links .contact-icons{
   margin-top: 10px;
+  color: #b3b3b3;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.links .contact-icons:hover {
+  color: #667eea;
 }
 
 .contact-icons{
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  color: #b3b3b3;
+  margin-right: 8px;
 }
+
+.contact-icons span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-left: 5px;
+}
+
 .fa-whatsapp{
-  font-size: 1.7rem !important;
+  font-size: 1.3rem !important;
   padding: 0 !important;
   margin: 10px 0 0 0 !important;
   font-weight: 600;
   cursor: default !important;
 }
+
 .fa-whatsapp span{
-  font-weight: 100;
+  font-weight: 400;
 }
+
 .browse{
   min-width: 16rem;
   width: auto;
@@ -151,35 +206,106 @@
   min-width: 16rem;
   width: auto;
 }
+
 .social{
   padding: 0;
   min-width: 16em;
   width: auto;
 }
+
 .social-container{
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background-color: black; */
   width: 100%;
+  margin-top: 10px;
 }
 
 .contact-us span{
   font-size: .8rem;
 }
 
-
 .contact-us a{
   margin-top: 20px;
 }
 
 .fa-brands{
-  font-size: 2rem;
-  margin: 5px 10px 0 10px;
+  font-size: 1.8rem;
+  margin: 5px 10px;
   cursor: pointer;
+  color: #b3b3b3;
+  transition: all 0.3s ease;
 }
+
+.fa-brands:hover {
+  color: #667eea;
+  transform: translateY(-3px);
+}
+
 .bottom-footer{
   height: 4rem;
-  background-color: blue;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b3b3b3;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 968px) {
+  .top-footer {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .profile {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .profile-pic {
+    margin: 0 0 1rem 0;
+  }
+  
+  .footer-container {
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-left: 0;
+    padding-top: 1rem;
+    margin: 1rem 0;
+    width: 100%;
+  }
+  
+  .footer-title h3::after {
+    left: 40%;
+    width: 20%;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-exert {
+    padding: 15px;
+  }
+  
+  .profile-pic {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .fa-brands {
+    font-size: 1.5rem;
+    margin: 5px 8px;
+  }
+  
+  .bottom-footer {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0 10px;
+  }
 }
